@@ -2,8 +2,12 @@ package com.vishal2376.scrollblock.services
 
 import android.accessibilityservice.AccessibilityService
 import android.app.Service
+import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.vishal2376.scrollblock.data.local.AppUsageDao
 import com.vishal2376.scrollblock.data.local.SummaryDao
 import com.vishal2376.scrollblock.domain.model.AppUsage
@@ -74,9 +78,7 @@ class ScrollAccessibility : AccessibilityService() {
 
 	override fun onServiceConnected() {
 		super.onServiceConnected()
-
-		val notificationHelper = NotificationHelper(this@ScrollAccessibility)
-		startForeground(NOTIFICATION_ID, notificationHelper.buildNotification())
+		startServiceAndForeground()
 	}
 
 	override fun onAccessibilityEvent(event: AccessibilityEvent?) {
@@ -175,6 +177,16 @@ class ScrollAccessibility : AccessibilityService() {
 
 		startTime = 0
 		endTime = 0
+	}
+
+	private fun startServiceAndForeground() {
+		val intent = Intent(this, ScrollAccessibility::class.java)
+		ContextCompat.startForegroundService(this, intent)
+
+		Handler(Looper.getMainLooper()).postDelayed({
+			val notificationHelper = NotificationHelper(this@ScrollAccessibility)
+			startForeground(NOTIFICATION_ID, notificationHelper.buildNotification())
+		}, 1000)
 	}
 
 	override fun onInterrupt() {
