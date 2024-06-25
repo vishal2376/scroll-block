@@ -20,7 +20,7 @@ Scroll Block is a free app that helps you stop scrolling addictive short videos,
 <br/>
 
 <div style="display: flex; flex-direction: row;">
-    <a href='https://apt.izzysoft.de/fdroid/index/apk/com.vishal2376.scroll-block'><img alt='Get it on IzzyOnDroid' src='https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png' style="width:200px"></a>
+    <a href='https://apt.izzysoft.de/fdroid/index/apk/com.vishal2376.scrollblock'><img alt='Get it on IzzyOnDroid' src='https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png' style="width:200px"></a>
     <a href='https://github.com/vishal2376/scroll-block/releases/latest'><img alt='Get it on Github' src='https://github.com/vishal2376/snaptick/assets/38159691/f502e2ec-dbf4-4ed6-b23f-a47b74080fea' style="width:200px"></a>
 </div>
 
