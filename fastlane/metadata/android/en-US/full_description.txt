@@ -1,11 +1,11 @@
-**Scroll Block** is a free app that helps you stop scrolling addictive short videos, take control of your habits, and boost productivity. It also provides analytics to help you understand your usage patterns.
-
-~~~~~~~
-
-**🚀 Features 🚀**
-
-- 🚫 Block Addictive Content
-- ⚙️ Customize Blocking Apps
-- 📊 Usage Analytics
-- 💡 User-Friendly Interface
-- 🔒 Supported Apps - Instagram, YouTube, LinkedIn, Snapchat
+<p>
+	<b>Scroll Block</b> is a free app that helps you stop scrolling addictive short videos, take control of your habits, and boost productivity. It also provides analytics to help you understand your usage patterns.
+</p>
+<p><br><b>🚀 Features 🚀</b></p>
+<ul>
+	<li style='list-style-type:none'>🚫 Block Addictive Content</li>
+	<li style='list-style-type:none'>⚙️ Customize Blocking Apps</li>
+	<li style='list-style-type:none'>📊 Usage Analytics</li>
+	<li style='list-style-type:none'>💡 User-Friendly Interface</li>
+	<li style='list-style-type:none'>🔒 Supported Apps - Instagram, YouTube, LinkedIn, Snapchat</li>
+</ul>
