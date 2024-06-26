@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.vishal2376.scrollblock.presentation.analytics.AnalyticScreen
 import com.vishal2376.scrollblock.presentation.home.HomeScreen
 import com.vishal2376.scrollblock.presentation.onboarding.PermissionScreen
 import com.vishal2376.scrollblock.presentation.onboarding.WelcomeScreen
@@ -63,6 +64,10 @@ fun NavGraph(viewModel: MainViewModel) {
 					}
 				}
 			})
+		}
+
+		composable(Screen.AnalyticScreen.name) {
+			AnalyticScreen(onBack = { navController.navigateUp() })
 		}
 	}
 }

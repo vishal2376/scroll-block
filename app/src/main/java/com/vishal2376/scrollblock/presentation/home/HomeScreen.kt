@@ -65,6 +65,7 @@ import com.vishal2376.scrollblock.presentation.home.components.NavigationDrawerC
 import com.vishal2376.scrollblock.presentation.home.components.PieChartIndicatorComponent
 import com.vishal2376.scrollblock.presentation.main.MainEvent
 import com.vishal2376.scrollblock.presentation.main.MainState
+import com.vishal2376.scrollblock.presentation.navigation.Screen
 import com.vishal2376.scrollblock.ui.theme.ScrollBlockTheme
 import com.vishal2376.scrollblock.ui.theme.black200
 import com.vishal2376.scrollblock.ui.theme.blackGradient
@@ -173,8 +174,10 @@ fun HomeScreen(
 							Box(
 								modifier = Modifier
 									.clip(CircleShape)
-									.clickable {                                    // todo: navigate to analytics screen
-									}, contentAlignment = Alignment.Center
+									.clickable {
+										onNavigate(Screen.AnalyticScreen.name)
+									},
+								contentAlignment = Alignment.Center
 							) {
 								Column(
 									modifier = Modifier.padding(top = 8.dp),
