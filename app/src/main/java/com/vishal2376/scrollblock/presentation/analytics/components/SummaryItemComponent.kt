@@ -8,27 +8,25 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccessTime
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.vishal2376.scrollblock.R
-import com.vishal2376.scrollblock.presentation.common.fontMontserrat
-import com.vishal2376.scrollblock.presentation.common.fontMontserratRegular
+import com.vishal2376.scrollblock.presentation.common.summaryInfoStyle
+import com.vishal2376.scrollblock.presentation.common.summaryTitleStyle
 import com.vishal2376.scrollblock.ui.theme.ScrollBlockTheme
 
 @Composable
-fun SummaryItemComponent(modifier: Modifier = Modifier) {
-	Box(modifier = modifier.width(174.dp)) {
+fun SummaryItemComponent(
+	title: String, info: String, icon: Int
+) {
+	Box(modifier = Modifier.width(174.dp)) {
 		Image(painter = painterResource(R.drawable.summary_item), contentDescription = null)
 		Column(
 			modifier = Modifier
@@ -44,14 +42,12 @@ fun SummaryItemComponent(modifier: Modifier = Modifier) {
 			) {
 				Text(
 					modifier = Modifier.padding(start = 8.dp),
-					text = "Time\nWasted", fontSize = 18.sp,
-					fontFamily = fontMontserratRegular,
-					fontWeight = FontWeight.SemiBold,
-					color = Color.Black,
+					text = title,
+					style = summaryTitleStyle
 				)
 				Icon(
-					modifier = Modifier.padding(top = 6.dp),
-					imageVector = Icons.Default.AccessTime,
+					modifier = Modifier.padding(top = 8.dp),
+					painter = painterResource(id = icon),
 					tint = Color.Black,
 					contentDescription = null
 				)
@@ -61,10 +57,8 @@ fun SummaryItemComponent(modifier: Modifier = Modifier) {
 				modifier = Modifier
 					.fillMaxWidth()
 					.padding(bottom = 32.dp),
-				text = "21h 31m",
-				fontSize = 30.sp,
-				fontFamily = fontMontserrat,
-				color = Color.Black,
+				text = info,
+				style = summaryInfoStyle,
 				textAlign = TextAlign.Center
 			)
 		}
@@ -75,6 +69,6 @@ fun SummaryItemComponent(modifier: Modifier = Modifier) {
 @Composable
 private fun SummaryItemComponentPreview() {
 	ScrollBlockTheme {
-		SummaryItemComponent()
+		SummaryItemComponent("Time\nWasted", "21h 32m", R.drawable.clock)
 	}
 }
