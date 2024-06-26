@@ -4,7 +4,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.vishal2376.scrollblock.R
 import com.vishal2376.scrollblock.ui.theme.black500
@@ -51,7 +50,7 @@ val smallDescriptionStyle = TextStyle(
 )
 
 val summaryTitleStyle = TextStyle(
-	fontSize = 18.sp,
+	fontSize = 20.sp,
 	fontFamily = fontMontserrat,
 	fontWeight = FontWeight.Normal,
 	color = black500,

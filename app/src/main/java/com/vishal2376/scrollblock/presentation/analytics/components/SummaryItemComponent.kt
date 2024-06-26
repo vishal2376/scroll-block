@@ -12,6 +12,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -26,7 +27,7 @@ import com.vishal2376.scrollblock.ui.theme.ScrollBlockTheme
 fun SummaryItemComponent(
 	title: String, info: String, icon: Int
 ) {
-	Box(modifier = Modifier.width(174.dp)) {
+	Box(modifier = Modifier.width(174.dp).scale(0.9f)) {
 		Image(painter = painterResource(R.drawable.summary_item), contentDescription = null)
 		Column(
 			modifier = Modifier
@@ -41,7 +42,7 @@ fun SummaryItemComponent(
 				horizontalArrangement = Arrangement.SpaceBetween
 			) {
 				Text(
-					modifier = Modifier.padding(start = 8.dp),
+					modifier = Modifier.padding(start = 8.dp, top = 4.dp),
 					text = title,
 					style = summaryTitleStyle
 				)
