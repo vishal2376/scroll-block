@@ -1,0 +1,12 @@
+### Version 1.0-beta02 - June 24, 2024
+
+- Fixed scrolling issue in smaller devices
+- Fixed app crash due to PendingIntent on Android 12+
+- Fixed app crash due to Foreground permission on Android 12+
+
+### Version 1.0-beta - June 23, 2024
+
+- Block Addictive Short Videos
+- Customize Blocking Apps
+- User-Friendly Interface with cool animations
+- Supported Apps - Instagram, YouTube, LinkedIn, Snapchat
