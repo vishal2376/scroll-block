@@ -100,6 +100,3 @@ We welcome contributions from anyone interested in helping to improve Scroll Blo
 ## License
 
 This project is licensed under the GPL v3.0 License - see the [LICENSE](LICENSE) file for details.
-
-## Credits
-App Icon created by <a href="https://www.flaticon.com/"> Flaticon</a>
