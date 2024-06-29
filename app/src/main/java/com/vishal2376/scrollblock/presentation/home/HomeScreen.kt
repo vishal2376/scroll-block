@@ -220,7 +220,7 @@ fun HomeScreen(
 										.background(
 											Brush.verticalGradient(
 												listOf(
-													Color.Transparent, black200
+													Color.Transparent, MaterialTheme.colorScheme.secondary
 												)
 											)
 										)
@@ -254,8 +254,8 @@ fun HomeScreen(
 						modifier = Modifier.align(Alignment.BottomCenter), onClick = {
 							openAccessibilitySettings(context)
 						}, colors = ButtonDefaults.buttonColors(
-							containerColor = blue,
-							contentColor = MaterialTheme.colorScheme.onPrimary
+							containerColor = MaterialTheme.colorScheme.onPrimary,
+							contentColor = MaterialTheme.colorScheme.primary
 						)
 					) {
 						Text(

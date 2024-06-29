@@ -29,6 +29,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -43,7 +44,6 @@ import com.vishal2376.scrollblock.presentation.common.headlineStyle
 import com.vishal2376.scrollblock.presentation.common.smallDescriptionStyle
 import com.vishal2376.scrollblock.presentation.navigation.Screen
 import com.vishal2376.scrollblock.ui.theme.ScrollBlockTheme
-import com.vishal2376.scrollblock.ui.theme.blackGradient
 import com.vishal2376.scrollblock.ui.theme.blue
 import com.vishal2376.scrollblock.ui.theme.red
 import com.vishal2376.scrollblock.ui.theme.white
@@ -87,6 +87,14 @@ fun PermissionScreen(onNavigate: (String) -> Unit) {
 			)
 		}
 	}) { innerPadding ->
+
+		val blackGradient = Brush.verticalGradient(
+			listOf(
+				MaterialTheme.colorScheme.primary,
+				MaterialTheme.colorScheme.secondary
+			)
+		)
+
 		Column(
 			Modifier
 				.fillMaxSize()
@@ -122,11 +130,11 @@ fun PermissionScreen(onNavigate: (String) -> Unit) {
 			Button(
 				onClick = { openAccessibilitySettings(context) },
 				colors = ButtonDefaults.buttonColors(
-					containerColor = blue, contentColor = MaterialTheme.colorScheme.onPrimary
+					containerColor = MaterialTheme.colorScheme.onPrimary,
+					contentColor = MaterialTheme.colorScheme.primary
 				),
-				shape = RoundedCornerShape(8.dp),
 			) {
-				Text(text = "Go to Accessibility Settings")
+				Text(text = "Accessibility Settings")
 			}
 			Column {
 				Text(
