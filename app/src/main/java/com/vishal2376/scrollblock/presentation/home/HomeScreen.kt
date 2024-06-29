@@ -68,7 +68,6 @@ import com.vishal2376.scrollblock.presentation.main.MainState
 import com.vishal2376.scrollblock.presentation.navigation.Screen
 import com.vishal2376.scrollblock.ui.theme.ScrollBlockTheme
 import com.vishal2376.scrollblock.ui.theme.black200
-import com.vishal2376.scrollblock.ui.theme.blackGradient
 import com.vishal2376.scrollblock.ui.theme.blue
 import com.vishal2376.scrollblock.ui.theme.pieChartColors
 import com.vishal2376.scrollblock.ui.theme.white
@@ -99,7 +98,6 @@ fun HomeScreen(
 		mutableStateOf(isAccessibilityServiceEnabled(context))
 	}
 
-	// todo: only show today app usage instead of all
 	val instagramTimeSpent = getAppTimeSpent(todayAppUsage, instagramPackage)
 	val youtubeTimeSpent = getAppTimeSpent(todayAppUsage, youtubePackage)
 	val linkedinTimeSpent = getAppTimeSpent(todayAppUsage, linkedinPackage)
@@ -156,6 +154,12 @@ fun HomeScreen(
 						.fillMaxWidth()
 						.height(350.dp)
 				) {
+					val blackGradient = Brush.verticalGradient(
+						listOf(
+							MaterialTheme.colorScheme.primary,
+							MaterialTheme.colorScheme.secondary
+						)
+					)
 
 					Column(
 						modifier = Modifier

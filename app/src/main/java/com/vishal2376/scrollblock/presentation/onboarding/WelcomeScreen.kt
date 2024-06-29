@@ -31,6 +31,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -41,7 +42,6 @@ import com.vishal2376.scrollblock.presentation.common.h2style
 import com.vishal2376.scrollblock.presentation.common.titleStyle
 import com.vishal2376.scrollblock.presentation.navigation.Screen
 import com.vishal2376.scrollblock.ui.theme.ScrollBlockTheme
-import com.vishal2376.scrollblock.ui.theme.blackGradient
 import com.vishal2376.scrollblock.ui.theme.blue
 import com.vishal2376.scrollblock.ui.theme.orange
 import kotlinx.coroutines.delay
@@ -80,6 +80,14 @@ fun WelcomeScreen(onNavigate: (String) -> Unit) {
 			Icon(imageVector = Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null)
 		}
 	}) { innerPadding ->
+
+		val blackGradient = Brush.verticalGradient(
+			listOf(
+				MaterialTheme.colorScheme.primary,
+				MaterialTheme.colorScheme.secondary
+			)
+		)
+
 		Column(
 			Modifier
 				.fillMaxSize()

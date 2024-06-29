@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,7 +35,6 @@ import com.vishal2376.scrollblock.presentation.analytics.components.SummaryItemC
 import com.vishal2376.scrollblock.presentation.common.h1style
 import com.vishal2376.scrollblock.presentation.common.h2style
 import com.vishal2376.scrollblock.ui.theme.ScrollBlockTheme
-import com.vishal2376.scrollblock.ui.theme.blackGradient
 import com.vishal2376.scrollblock.ui.theme.white
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -58,6 +58,14 @@ fun AnalyticScreen(onBack: () -> Unit) {
 			})
 
 	}) { innerPadding ->
+
+		val blackGradient = Brush.verticalGradient(
+			listOf(
+				MaterialTheme.colorScheme.primary,
+				MaterialTheme.colorScheme.secondary
+			)
+		)
+
 		Column(
 			modifier = Modifier
 				.fillMaxSize()
