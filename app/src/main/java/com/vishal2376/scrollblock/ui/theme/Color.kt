@@ -1,12 +1,14 @@
 package com.vishal2376.scrollblock.ui.theme
 
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 val black500 = Color(0xFF26282B)
 val black200 = Color(0xFF353941)
 
-val blackGradient = Brush.verticalGradient(listOf(black500, black200))
+val black900 = Color(0xFF000000)
+val black700 = Color(0xFF131313)
 
 val blue = Color(0xFF5F85DB)
 val orange = Color(0xFFFF8C32)

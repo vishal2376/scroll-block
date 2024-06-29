@@ -1,16 +1,20 @@
 package com.vishal2376.scrollblock.ui.theme
 
-import android.os.Build
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import com.vishal2376.scrollblock.presentation.common.AppTheme
 
 private val DarkColorScheme = darkColorScheme(
 	primary = black500, secondary = black200, onPrimary = white, onSecondary = gray
+)
+
+private val AmoledColorScheme = darkColorScheme(
+	primary = black900,
+	secondary = black700,
+	onPrimary = white,
+	onSecondary = gray
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -29,16 +33,13 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun ScrollBlockTheme(
-	darkTheme: Boolean = true, dynamicColor: Boolean = false, content: @Composable () -> Unit
+	theme: AppTheme = AppTheme.AMOLED,
+	content: @Composable () -> Unit
 ) {
-	val colorScheme = when {
-		dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-			val context = LocalContext.current
-			if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-		}
-
-		darkTheme -> DarkColorScheme
-		else -> LightColorScheme
+	val colorScheme = when (theme) {
+		AppTheme.LIGHT -> LightColorScheme
+		AppTheme.DARK -> DarkColorScheme
+		AppTheme.AMOLED -> AmoledColorScheme
 	}
 
 	MaterialTheme(
