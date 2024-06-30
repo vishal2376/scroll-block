@@ -54,11 +54,13 @@ Scroll Block is a free app that helps you stop scrolling addictive short videos,
   
 - 🔒 Supported Apps - Instagram, Youtube, Linkedin, Snapchat
 
-
 ## Screenshots ([Figma](https://www.figma.com/design/VMA90BJ4TRXoZU2H3LW4Me/Scroll-Block-App-UI?node-id=0-1&t=nFFmmtE2DfpgOCzh-1))
 
-![image](https://github.com/vishal2376/scroll-block/assets/38159691/43507bac-9e63-457c-8029-3022f73f32eb)
+- #### Dark Amoled Theme
+![Dark Amoled Theme](https://github.com/vishal2376/scroll-block/assets/38159691/5beaf284-6c5c-4ec6-8d0f-d2ba6d9d3cd4)
 
+- #### Dark Theme
+![Dark Theme](https://github.com/vishal2376/scroll-block/assets/38159691/fa9cc617-85b5-4c1f-8fcb-0fd2405efb94)
 
 ## Getting Started
 
