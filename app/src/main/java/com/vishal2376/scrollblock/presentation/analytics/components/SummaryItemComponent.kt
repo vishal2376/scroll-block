@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -23,7 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -79,7 +80,11 @@ fun SummaryItemComponent(
 				alpha = imgAlpha
 			}
 	) {
-		Image(painter = painterResource(R.drawable.summary_item), contentDescription = null)
+		Image(
+			painter = painterResource(R.drawable.summary_item),
+			contentDescription = null,
+			colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimary)
+		)
 		Column(
 			modifier = Modifier
 				.matchParentSize()
@@ -95,12 +100,13 @@ fun SummaryItemComponent(
 				Text(
 					modifier = Modifier.padding(start = 4.dp, top = 4.dp),
 					text = title,
-					style = summaryTitleStyle
+					style = summaryTitleStyle,
+					color = MaterialTheme.colorScheme.primary
 				)
 				Icon(
 					modifier = Modifier.padding(top = 8.dp),
 					painter = painterResource(id = icon),
-					tint = Color.Black,
+					tint = MaterialTheme.colorScheme.primary,
 					contentDescription = null
 				)
 			}
@@ -111,7 +117,8 @@ fun SummaryItemComponent(
 					.padding(bottom = 32.dp),
 				text = info,
 				style = summaryInfoStyle,
-				textAlign = TextAlign.Center
+				textAlign = TextAlign.Center,
+				color = MaterialTheme.colorScheme.primary
 			)
 		}
 	}

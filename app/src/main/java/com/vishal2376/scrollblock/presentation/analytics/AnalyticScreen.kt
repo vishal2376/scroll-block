@@ -130,7 +130,7 @@ fun AnalyticScreen(onBack: () -> Unit) {
 						Text(
 							text = formatTime(totalTimeWasted.sum()),
 							textAlign = TextAlign.Center,
-							fontSize = 24.sp,
+							fontSize = 25.sp,
 							fontFamily = fontMontserrat,
 						)
 					}
