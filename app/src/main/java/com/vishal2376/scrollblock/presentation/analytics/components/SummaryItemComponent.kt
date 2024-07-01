@@ -1,8 +1,10 @@
 package com.vishal2376.scrollblock.presentation.analytics.components
 
 import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -35,31 +37,46 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SummaryItemComponent(
-	title: String, info: String, icon: Int
+	title: String, info: String, icon: Int, index: Int
 ) {
-	var isVisible by remember { mutableStateOf(false) }
+	var animationPlayed by remember { mutableStateOf(false) }
+	val maxImgSize = 174.dp
+	val itemRotation = -30f
 
-	val random = (1..4).random()
+	LaunchedEffect(key1 = Unit) {
+		delay(200L * index)
+		animationPlayed = true
+	}
 
-	val scaleAnim by animateFloatAsState(
-		targetValue = if (isVisible) 0.9f else 0.1f,
+	val imgAlpha by animateFloatAsState(
+		targetValue = if (animationPlayed) 1f else 0f,
+		animationSpec = tween(400),
+		label = "",
+	)
+
+	val imgSize by animateDpAsState(
+		targetValue = if (animationPlayed) maxImgSize else 50.dp,
 		animationSpec = spring(
 			dampingRatio = Spring.DampingRatioMediumBouncy,
 			stiffness = Spring.StiffnessLow
 		), label = ""
 	)
 
-	LaunchedEffect(key1 = Unit) {
-		delay(100L * random)
-		isVisible = true
-	}
+	val imgRotation by animateFloatAsState(
+		targetValue = if (animationPlayed) 0f else itemRotation,
+		animationSpec = spring(
+			dampingRatio = Spring.DampingRatioMediumBouncy,
+			stiffness = Spring.StiffnessLow
+		), label = ""
+	)
 
 	Box(
 		modifier = Modifier
-			.width(174.dp)
-			.scale(scaleAnim)
+			.width(imgSize)
+			.scale(0.9f)
 			.graphicsLayer {
-				alpha = scaleAnim
+				rotationZ = imgRotation
+				alpha = imgAlpha
 			}
 	) {
 		Image(painter = painterResource(R.drawable.summary_item), contentDescription = null)
@@ -76,7 +93,7 @@ fun SummaryItemComponent(
 				horizontalArrangement = Arrangement.SpaceBetween
 			) {
 				Text(
-					modifier = Modifier.padding(start = 8.dp, top = 4.dp),
+					modifier = Modifier.padding(start = 4.dp, top = 4.dp),
 					text = title,
 					style = summaryTitleStyle
 				)
@@ -104,6 +121,6 @@ fun SummaryItemComponent(
 @Composable
 private fun SummaryItemComponentPreview() {
 	ScrollBlockTheme {
-		SummaryItemComponent("Time\nWasted", "21h 32m", R.drawable.clock)
+		SummaryItemComponent("Time\nWasted", "21h 32m", R.drawable.clock, 2)
 	}
 }
